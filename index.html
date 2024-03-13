@@ -3,50 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap CSS minified 5.3.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <!-- jQuery UI CSS 1.13.2 -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <title>DEV.quiz</title>
     <!-- Overrides -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
     <header>
         <h1>DEV.quiz</h1>
-        <section id="counters">
-            <div id="counter-points">
-                <span>0</span>
-                <h3>Points</h3>
+        <section id="counters" class="hidden">
+            <div id="counter-points" class="counter">
+                <figure>0</figure>
+                <figcaption>Points</figcaption>
             </div>
-            <div id="counter-question">
-                <span>0</span>
-                <h3>Question</h3>
+            <div id="counter-question" class="counter">
+                <figure>0</figure>
+                <figcaption>Question</figcaption>
             </div>
-            <div id="counter-timer">
-                <span>60</span>
-                <h3>Seconds</h3>
+            <div id="counter-timer" class="counter">
+                <figure>60</figure>
+                <figcaption>Seconds</figcaption>
             </div>
         </section>
     </header>
     
     <main>
         <!-- Starting Screen -->
-
+        <article>
+            <div class="instructions">
+                <h2>Instructions</h2>
+                <p>When you click the START button, you'll be asked a series of questions.</p>
+                <p>For each question you answer correctly, you'll gain 1 point. For each answered incorrectly you'll lose 5 seconds.</p>
+                <p>The quiz will end when the timer reaches zero.</p>
+            </div>
+            <div class="start">
+                <div class="row">
+                    <div class="counter">
+                        <figure>20</figure>
+                        <figcaption>Questions</figcaption>
+                    </div>
+                    <div class="counter">
+                        <figure>60</figure>
+                        <figcaption>Seconds</figcaption>
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="quiz-start">START</button>
+                </div>
+            </div>
+        </article>
         <!-- Quiz Screen -->
-
+        <article>
+            <div class="row">
+                <h2 class="question-title">Question Title</h2>
+            </div>
+            <div class="row">
+                <button id="a1">Answer 1</button><button id="a2">Answer 2</button>
+            </div>
+            <div class="row">
+                <button id="a3">Answer 3</button><button id="a4">Answer 4</button>
+            </div>
+        </article>
         <!-- End Screen -->
+        <article>
+            <div class="row">
+                <h2>Game over!</h2>
+            </div>
+            <div class="row">
+                <div class="column">
+
+                </div>
+                <div class="column">
+
+                </div>
+                <div class="column">
+
+                </div>
+            </div>
+        </article>
     </main>
 
-    <!-- <aside id="leaderboard">
-        <table></table>
-        <button>Reset Leaderboard</button>
-    </aside> -->
+    <aside id="leaderboard" class="hidden">
+        <div class="row">
+            <h2>Leaderboard</h2>
+        </div>
+        <div class="leaderboard-table row">
+            <div class="leaderboard-item">
+                <span class="rank start">
+                    #1
+                </span>
+                <span class="name">
+                    Test User
+                </span>
+                <span class="scoreboard-stat end correct">
+                    20
+                </span>
+                <span class="scoreboard-stat end incorrect">
+                    5
+                </span>
+                <span class="scoreboard-stat end total">
 
-    <footer>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <button>Reset Leaderboard</button>
+        </div>
+    </aside>
+
+    <footer class="hidden">
         <section>
-            <div id="status-tab"></div>
-            <ul id="segment-set"></ul>
+            <div id="status-tab">
+                <!-- Status text -->
+            </div>
+            <ul id="segment-set">
+                <!-- Generated segments -->
+            </ul>
         </section>
     </footer>
     <!-- Script declarations -->
