@@ -1,134 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEV.quiz</title>
-    <!-- Overrides -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body>
-    <header>
-        <h1>DEV.quiz</h1>
-        <section id="counters" class="hidden">
-            <div id="counter-points" class="counter">
-                <figure>0</figure>
-                <figcaption>Points</figcaption>
-            </div>
-            <div id="counter-question" class="counter">
-                <figure>0</figure>
-                <figcaption>Question</figcaption>
-            </div>
-            <div id="counter-timer" class="counter">
-                <figure>60</figure>
-                <figcaption>Seconds</figcaption>
-            </div>
-        </section>
-    </header>
-    
-    <main>
-        <!-- Starting Screen -->
-        <article>
-            <div class="instructions">
-                <h2>Instructions</h2>
-                <p>When you click the START button, you'll be asked a series of questions.</p>
-                <p>For each question you answer correctly, you'll gain 1 point. For each answered incorrectly you'll lose 5 seconds.</p>
-                <p>The quiz will end when the timer reaches zero.</p>
-            </div>
-            <div class="start">
-                <div class="row">
-                    <div class="counter">
-                        <figure>20</figure>
-                        <figcaption>Questions</figcaption>
-                    </div>
-                    <div class="counter">
-                        <figure>60</figure>
-                        <figcaption>Seconds</figcaption>
-                    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DEV.quiz</title>
+        <!-- Overrides -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>DEV.quiz</h1>
+            <section id="counters" class="hidden">
+                <div id="counter-points" class="counter">
+                    <figure>0</figure>
+                    <figcaption>Points</figcaption>
                 </div>
-                <div class="row">
-                    <button id="quiz-start">START</button>
+                <div id="counter-question" class="counter">
+                    <figure>0</figure>
+                    <figcaption>Question</figcaption>
                 </div>
-            </div>
-        </article>
-        <!-- Quiz Screen -->
-        <article>
-            <div class="row">
-                <h2 class="question-title">Question Title</h2>
-            </div>
-            <div class="row">
-                <button id="a1">Answer 1</button><button id="a2">Answer 2</button>
-            </div>
-            <div class="row">
-                <button id="a3">Answer 3</button><button id="a4">Answer 4</button>
-            </div>
-        </article>
-        <!-- End Screen -->
-        <article>
-            <div class="row">
-                <h2>Game over!</h2>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <figure>24</figure>
-                    <figcaption>Final Score</figcaption>
+                <div id="counter-timer" class="counter">
+                    <figure>60</figure>
+                    <figcaption>Seconds</figcaption>
                 </div>
-                <div class="column">
-                    <form action="">
-                        <div>
-                            <label for="playername">Enter your name: <input id="playerName" type="text"></label>
+            </section>
+        </header>
+        
+        <main>
+            <!-- Starting Screen -->
+            <article>
+                <div class="instructions">
+                    <h2>Instructions</h2>
+                    <p>When you click the START button, you'll be asked a series of questions.</p>
+                    <p>For each question you answer correctly, you'll gain 1 point. For each answered incorrectly you'll lose 5 seconds.</p>
+                    <p>The quiz will end when the timer reaches zero.</p>
+                </div>
+                <div class="start">
+                    <div class="row">
+                        <div class="counter">
+                            <figure>20</figure>
+                            <figcaption>Questions</figcaption>
                         </div>
-                        <div>
-                            <button>Save</button>
+                        <div class="counter">
+                            <figure>60</figure>
+                            <figcaption>Seconds</figcaption>
                         </div>
-                    </form>
+                    </div>
+                    <div class="row">
+                        <button id="quiz-start">START</button>
+                    </div>
                 </div>
-                <div class="column">
+            </article>
+            <!-- Quiz Screen -->
+            <article>
+                <div class="row">
+                    <h2 class="question-title">Question Title</h2>
+                </div>
+                <div class="row">
+                    <button id="a1">Answer 1</button><button id="a2">Answer 2</button>
+                </div>
+                <div class="row">
+                    <button id="a3">Answer 3</button><button id="a4">Answer 4</button>
+                </div>
+            </article>
+            <!-- End Screen -->
+            <article>
+                <div class="row">
+                    <h2>Game over!</h2>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <figure>24</figure>
+                        <figcaption>Final Score</figcaption>
+                    </div>
+                    <div class="column">
+                        <form action="">
+                            <div>
+                                <label for="playername">Enter your name: <input id="playerName" type="text"></label>
+                            </div>
+                            <div>
+                                <button>Save</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="column">
+                        <div class="column">
+                            <div>
+                                <span>20</span><span>Correct</span>
+                            </div>
+                            <div>
+                                <span>5</span><span>Incorrect</span>
+                            </div>
+                            <div>
+                                <span>25</span><span>Total</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
 
+        <aside id="leaderboard" class="hidden">
+            <div class="row">
+                <h2>Leaderboard</h2>
+            </div>
+            <div class="leaderboard-table row">
+                <div class="leaderboard-item">
+                    <span class="rank start">
+                        #1
+                    </span>
+                    <span class="name">
+                        Test User
+                    </span>
+                    <span class="scoreboard-stat end correct">
+                        20
+                    </span>
+                    <span class="scoreboard-stat end incorrect">
+                        5
+                    </span>
+                    <span class="scoreboard-stat end total">
+                        25
+                    </span>
                 </div>
             </div>
-        </article>
-    </main>
-
-    <aside id="leaderboard" class="hidden">
-        <div class="row">
-            <h2>Leaderboard</h2>
-        </div>
-        <div class="leaderboard-table row">
-            <div class="leaderboard-item">
-                <span class="rank start">
-                    #1
-                </span>
-                <span class="name">
-                    Test User
-                </span>
-                <span class="scoreboard-stat end correct">
-                    20
-                </span>
-                <span class="scoreboard-stat end incorrect">
-                    5
-                </span>
-                <span class="scoreboard-stat end total">
-
-                </span>
+            <div class="row">
+                <button>Reset Leaderboard</button>
             </div>
-        </div>
-        <div class="row">
-            <button>Reset Leaderboard</button>
-        </div>
-    </aside>
-
-    <footer class="hidden">
-        <section>
-            <div id="status-tab">
-                <!-- Status text -->
-            </div>
-            <ul id="segment-set">
-                <!-- Generated segments -->
-            </ul>
-        </section>
-    </footer>
-    <!-- Script declarations -->
-    <script src="./assets/js/app.js"></script>
-</body>
+        </aside>
+        <!-- Script declarations -->
+        <script src="./assets/js/app.js"></script>
+    </body>
 </html>
