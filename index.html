@@ -7,8 +7,8 @@
         <!-- Overrides -->
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
-    <body>
-        <header>
+    <body class="debug">
+        <header class="debug">
             <h1>DEV.quiz</h1>
             <section id="counters" class="hidden">
                 <div id="counter-points" class="counter">
@@ -26,10 +26,10 @@
             </section>
         </header>
         
-        <main>
+        <main class="debug">
             <!-- Starting Screen -->
-            <article>
-                <div class="instructions">
+            <article class="debug row">
+                <div id="instructions" class="column center">
                     <h2>Instructions</h2>
                     <p>When you click the START button, you'll be asked a series of questions.</p>
                     <p>For each question you answer correctly, you'll gain 1 point. For each answered incorrectly you'll lose 5 seconds.</p>
@@ -37,70 +37,73 @@
                 </div>
                 <div class="start">
                     <div class="row">
-                        <div class="counter">
-                            <figure>20</figure>
+                        <div class="counter sm">
+                            <figure class="info">20</figure>
                             <figcaption>Questions</figcaption>
                         </div>
-                        <div class="counter">
-                            <figure>60</figure>
+                        <div class="counter sm">
+                            <figure class="info">60</figure>
                             <figcaption>Seconds</figcaption>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row center">
                         <button id="quiz-start">START</button>
                     </div>
                 </div>
             </article>
             <!-- Quiz Screen -->
-            <article class="none">
-                <div class="row">
-                    <h2 class="question-title">Question Title</h2>
+            <article id="question" class="debug none">
+                <div class="column">
+                    <h2 id="question-title">Question 1:</h2>
+                    <p id="question-text">This is a sample question. Please choose an answer from one of the below...</p>
                 </div>
-                <div class="row">
+                <div class="row answers">
                     <button id="a1">Answer 1</button><button id="a2">Answer 2</button>
                 </div>
-                <div class="row">
+                <div class="row answers">
                     <button id="a3">Answer 3</button><button id="a4">Answer 4</button>
                 </div>
             </article>
             <!-- End Screen -->
-            <article class="none">
-                <div class="row">
+            <article id="end-screen" class="debug none">
+                <div class="row center">
                     <h2>Game over!</h2>
                 </div>
-                <div class="row">
-                    <div class="column">
-                        <figure>24</figure>
+                <div id="end-screen-stats" class="row">
+                    <div class="column counter sm center">
+                        <figure class="info">24</figure>
                         <figcaption>Final Score</figcaption>
                     </div>
                     <div class="column">
-                        <form action="">
-                            <div>
-                                <label for="playername">Enter your name: <input id="playerName" type="text"></label>
+                        <form>
+                            <div class="column center">
+                                <label for="playername">Enter your name</label>
+                                <input id="playerName" type="text">
                             </div>
                             <div>
                                 <button>Save</button>
                             </div>
                         </form>
                     </div>
-                    <div class="column">
-                        <div class="column">
-                            <div>
-                                <span>20</span><span>Correct</span>
-                            </div>
-                            <div>
-                                <span>5</span><span>Incorrect</span>
-                            </div>
-                            <div>
-                                <span>25</span><span>Total</span>
-                            </div>
+                    <div class="column center">
+                        <div class="result-counter sm center">
+                            <figcaption>Correct</figcaption>
+                            <figure class="correct">20</figure>
+                        </div>
+                        <div class="result-counter sm center">
+                            <figcaption>Incorrect</figcaption>
+                            <figure class="incorrect">5</figure>
+                        </div>
+                        <div class="result-counter sm center">
+                            <figcaption>Total</figcaption>
+                            <figure class="info">25</figure>
                         </div>
                     </div>
                 </div>
             </article>
         </main>
 
-        <aside id="leaderboard" class="hidden">
+        <aside id="leaderboard" class="debug">
             <div class="row">
                 <h2>Leaderboard</h2>
             </div>
