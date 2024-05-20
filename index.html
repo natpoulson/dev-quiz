@@ -8,18 +8,18 @@
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
     <body>
-        <header>
+        <header class="row space-between">
             <h1>DEV.quiz</h1>
-            <section id="counters" class="hidden">
-                <div id="counter-points" class="counter">
+            <section id="counters" class="row hidden">
+                <div id="counter-points" class="counter lg">
                     <figure>0</figure>
                     <figcaption>Points</figcaption>
                 </div>
-                <div id="counter-question" class="counter">
+                <div id="counter-question" class="counter lg">
                     <figure>0</figure>
                     <figcaption>Question</figcaption>
                 </div>
-                <div id="counter-timer" class="counter">
+                <div id="counter-timer" class="counter lg">
                     <figure>60</figure>
                     <figcaption>Seconds</figcaption>
                 </div>
@@ -28,83 +28,116 @@
         
         <main>
             <!-- Starting Screen -->
-            <article>
-                <div class="instructions">
+            <article class="row">
+                <div id="instructions" class="column center">
                     <h2>Instructions</h2>
                     <p>When you click the START button, you'll be asked a series of questions.</p>
                     <p>For each question you answer correctly, you'll gain 1 point. For each answered incorrectly you'll lose 5 seconds.</p>
                     <p>The quiz will end when the timer reaches zero.</p>
                 </div>
-                <div class="start">
+                <div id="start">
                     <div class="row">
-                        <div class="counter">
-                            <figure>20</figure>
+                        <div class="counter sm">
+                            <figure class="info">20</figure>
                             <figcaption>Questions</figcaption>
                         </div>
-                        <div class="counter">
-                            <figure>60</figure>
+                        <div class="counter sm">
+                            <figure class="info">60</figure>
                             <figcaption>Seconds</figcaption>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row center">
                         <button id="quiz-start">START</button>
                     </div>
                 </div>
             </article>
             <!-- Quiz Screen -->
-            <article>
-                <div class="row">
-                    <h2 class="question-title">Question Title</h2>
+            <article id="question" class=" none">
+                <div class="column">
+                    <h2 id="question-title">Question 1:</h2>
+                    <p id="question-text">This is a sample question. Please choose an answer from one of the below...</p>
                 </div>
-                <div class="row">
+                <div class="row answers">
                     <button id="a1">Answer 1</button><button id="a2">Answer 2</button>
                 </div>
-                <div class="row">
+                <div class="row answers">
                     <button id="a3">Answer 3</button><button id="a4">Answer 4</button>
                 </div>
             </article>
             <!-- End Screen -->
-            <article>
-                <div class="row">
+            <article id="end-screen" class=" none">
+                <div class="row center">
                     <h2>Game over!</h2>
                 </div>
-                <div class="row">
-                    <div class="column">
-                        <figure>24</figure>
+                <div id="end-screen-stats" class="row">
+                    <div class="column counter sm center">
+                        <figure class="info">24</figure>
                         <figcaption>Final Score</figcaption>
                     </div>
                     <div class="column">
-                        <form action="">
-                            <div>
-                                <label for="playername">Enter your name: <input id="playerName" type="text"></label>
+                        <form>
+                            <div class="column center">
+                                <label for="playername">Enter your name</label>
+                                <input id="playerName" type="text">
                             </div>
                             <div>
-                                <button>Save</button>
+                                <button id="save-score">Save</button>
                             </div>
                         </form>
                     </div>
-                    <div class="column">
-                        <div class="column">
-                            <div>
-                                <span>20</span><span>Correct</span>
-                            </div>
-                            <div>
-                                <span>5</span><span>Incorrect</span>
-                            </div>
-                            <div>
-                                <span>25</span><span>Total</span>
-                            </div>
+                    <div class="column center">
+                        <div class="result-counter sm center">
+                            <figcaption>Correct</figcaption>
+                            <figure class="correct">20</figure>
+                        </div>
+                        <div class="result-counter sm center">
+                            <figcaption>Incorrect</figcaption>
+                            <figure class="incorrect">5</figure>
+                        </div>
+                        <div class="result-counter sm center">
+                            <figcaption>Total</figcaption>
+                            <figure class="info">25</figure>
                         </div>
                     </div>
                 </div>
             </article>
         </main>
 
-        <aside id="leaderboard" class="hidden">
-            <div class="row">
+        <footer>
+            <button id="leaderboard-reveal">Leaderboard</button>
+        </footer>
+        <aside id="leaderboard" class="">
+            <div class="row space-between">
                 <h2>Leaderboard</h2>
+                <span class="btn-close" title="Close Leaderboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </span>
             </div>
-            <div class="leaderboard-table row">
+            <div id="leaderboard-table" class="column">
+                <div id="leaderboard-header">
+                    <span class="rank">Rank</span>
+                    <span class="name">Name</span>
+                    <div class="stat-header row even-spaced">
+                        <span class="stat correct" title="Correct Answers">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </span>
+                        <span class="stat incorrect" title="Incorrect Answers">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>                          
+                        </span>
+                        <span class="stat total" title="Total Questions Asked">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                            </svg>                                                 
+                        </span>
+                    </div>
+                    <!-- SVG icons provided by https://heroicons.com, provided under MIT License -->
+                </div>
                 <div class="leaderboard-item">
                     <span class="rank start">
                         #1
@@ -112,18 +145,39 @@
                     <span class="name">
                         Test User
                     </span>
-                    <span class="scoreboard-stat end correct">
-                        20
+                    <div class="leaderboard-item-stats row even-spaced">
+                        <span class="stat correct">
+                            20
+                        </span>
+                        <span class="stat incorrect">
+                            5
+                        </span>
+                        <span class="stat total">
+                            25
+                        </span>
+                    </div>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank start">
+                        #2
                     </span>
-                    <span class="scoreboard-stat end incorrect">
-                        5
+                    <span class="name">
+                        Test User
                     </span>
-                    <span class="scoreboard-stat end total">
-                        25
-                    </span>
+                    <div class="leaderboard-item-stats row even-spaced">
+                        <span class="stat correct">
+                            20
+                        </span>
+                        <span class="stat incorrect">
+                            5
+                        </span>
+                        <span class="stat total">
+                            25
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row center">
                 <button>Reset Leaderboard</button>
             </div>
         </aside>

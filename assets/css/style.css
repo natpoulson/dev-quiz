@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Calibri", Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --border: hsl(0, 0%, 25%);
+    --shadow: hsla(0, 0%, 0%, 40%);
+    --background: hsl(0, 0%, 98%);
+    --neutral: hsl(0, 0%, 80%);
+    --bg-correct: hsl(110, 100%, 85%);
+    --fg-correct: hsl(110, 90%, 30%);
+    --bg-incorrect: hsl(0, 100%, 85%);
+    --fg-incorrect: hsl(0, 90%, 35%);
+    --bg-info: hsl(220, 100%, 85%);
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background);
+}
+
+header {
+    align-self: start;
+    justify-self: start;
+    min-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+header h1 {
+    align-self: center;
+}
+
+main {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: solid 2px var(--border);
+    box-shadow: 0.1rem 0.1rem 0.25rem var(--shadow);
+}
+
+article {
+    justify-self: center;
+    flex-grow: 1;
+}
+
+.column, body {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.none {
+    display: none;
+}
+
+.center {
+    text-align: center;
+    justify-content: center;
+}
+
+.even-spaced {
+    justify-content: space-evenly;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: solid 2px var(--border);
+    border-radius: 7px;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--neutral);
+    transition: ease filter 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+.btn-close {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+#instructions {
+    line-height: 1.5rem;
+    text-align: left;
+}
+
+#instructions h2 {
+    margin-bottom: 0.5rem;
+}
+
+#a1, #a2, #a3, #a4 {
+    background-color: hsl(50, 80%, 80%);
+    font-size: 0.9rem;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.result-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+
+.result-counter:last-of-type {
+    margin-bottom: 0;
+}
+
+.counter.sm {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.counter.lg > figure {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    padding-top: 0.5rem;
+}
+
+.counter.sm > figure {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+}
+
+.result-counter > figure {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.1rem;
+    text-align: center;
+    margin-right: 10px;
+    border: solid 2px var(--border);
+    border-radius: 100%;
+    font-weight: 500;
+}
+
+.counter > figure {
+    margin: 5px;
+    border: solid 3px var(--border);
+    border-radius: 100%;
+    font-weight: 600;
+}
+
+#end-screen > div:first-of-type {
+    border-bottom: solid 1px var(--border);
+}
+
+#end-screen h2 {
+    margin-bottom: 0.75rem;
+}
+
+#end-screen-stats > * {
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: calc(33vw / 3);
+}
+
+#end-screen-stats form > div:last-of-type {
+    margin-top: 0.5rem;
+}
+
+figure.correct {
+    background-color: var(--bg-correct);
+}
+
+figure.incorrect {
+    background-color: var(--bg-incorrect);
+}
+
+figure.info {
+    background-color: var(--bg-info);
+}
+
+#start {
+    margin: 2rem;
+}
+
+#start > div:last-of-type {
+    margin-top: 1rem;
+}
+
+#question > div:first-of-type {
+    margin-bottom: 1rem;
+}
+
+.answers button {
+    margin: 0.25rem;
+}
+
+#end-screen > div:first-of-type {
+    margin-bottom: 1rem;
+}
+
+#leaderboard {
+    position: fixed;
+    min-width: 40vw;
+    max-width: 90vw;
+    padding: 1rem;
+    border: solid 2px var(--border);
+    background-color: var(--background);
+    border-bottom: none;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0.1rem 0 0.25rem var(--shadow);
+    bottom: -100%;
+    transition: ease-out bottom 0.75s;
+}
+
+#leaderboard-reveal {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    text-align: center;
+    background-color: var(--bg-info);
+    box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow);
+    border: solid 2px var(--border);
+    cursor: pointer;
+}
+
+#leaderboard button {
+    min-width: max-content;
+    width: 50%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+    background-color: hsl(0, 75%, 45%);
+    color: hsl(0, 0%, 100%);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#leaderboard h2 {
+    margin-bottom: 1rem;
+}
+
+#leaderboard-table {
+    margin-bottom: 1rem;
+}
+
+#leaderboard-header svg {
+    width: 1.5rem;
+}
+
+#leaderboard-header, .leaderboard-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#leaderboard.expanded {
+    bottom: 0;
+}
+
+.leaderboard-item {
+    margin-bottom: 0.5rem;
+}
+
+.leaderboard-item:last-of-type {
+    margin-bottom: 0;
+}
+
+#leaderboard-header > span, .leaderboard-item > span {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#leaderboard-header > span {
+    font-weight: bold;
+}
+
+#leaderboard-header > span:first-of-type, .leaderboard-item > span:first-of-type {
+    margin-left: 0;
+}
+
+#leaderboard-header > span:last-of-type, .leaderboard-item > span:last-of-type {
+    margin-right: 0;
+}
+
+#leaderboard-header > .rank, .leaderboard-item > .rank {
+    justify-self: start;
+    font-weight: bold;
+}
+
+#leaderboard-header > .name, .leaderboard-item > .name {
+    flex-grow: 1;
+}
+
+#leaderboard-header .rank {
+    margin-right: 0;
+}
+
+#leaderboard-header .name {
+    justify-self: start;
+}
+
+.stat {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.stat-header, .leaderboard-item-stats {
+    min-width: 8rem;
+}
+
+.leaderboard-item-stats {
+    border: solid 1px var(--border);
+    border-radius: 1rem;
+}
+
+.stat-header > .correct {
+    color: var(--fg-correct);
+}
+
+.stat-header > .incorrect {
+    color: var(--fg-incorrect);
+}
+
+.leaderboard-item-stats .correct {
+    background-color: var(--bg-correct);
+    border-radius: 1rem 0 0 1rem;
+}
+
+.leaderboard-item-stats .incorrect {
+    background-color: var(--bg-incorrect);
+}
+
+.leaderboard-item-stats .total {
+    background-color: var(--bg-info);
+    border-radius: 0 1rem 1rem 0;
+}

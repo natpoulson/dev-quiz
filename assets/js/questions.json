@@ -1,0 +1,261 @@
+[
+    {
+        "question": "What is the CSS attribute used to determine how the dimensions of an element are calculated?",
+        "answers": [
+            "box-type",
+            "box-dimensions",
+            "box-sizing",
+            "box-border"
+        ],
+        "correct": "box-sizing"
+    },
+    {
+        "question": "What is the keyword used to declare a variable whose value cannot be changed?",
+        "answers": [
+            "var",
+            "const",
+            "let",
+            "def"
+        ],
+        "correct": "const"
+    },
+    {
+        "question": "What HTML tag do you use to specify the contents of a dropdown?",
+        "answers": [
+            "item",
+            "selection",
+            "option",
+            "choice"
+        ],
+        "correct": "option"
+    },
+    {
+        "question": "Why is semantic HTML recommended?",
+        "answers": [
+            "It is optimised for faster loading",
+            "It lets you do more than regular HTML",
+            "It allows for more unique styling in CSS",
+            "It provides context for what the HTML is"
+        ],
+        "correct": "It provides context for what the HTML is"
+    },
+    {
+        "question": "What HTML element is used to place text that describes a form input?",
+        "answers": [
+            "label",
+            "desc",
+            "text",
+            "caption"
+        ],
+        "correct": "label"
+    },
+    {
+        "question": "What display property ensures the selected element is always visible on screen?",
+        "answers": [
+            "sticky",
+            "fixed",
+            "absolute",
+            "relative"
+        ],
+        "correct": "fixed"
+    },
+    {
+        "question": "Which CSS property hides an element without removing it from the document flow?",
+        "answers": [
+            "display",
+            "opacity",
+            "visibility",
+            "overlay"
+        ],
+        "correct": "visibility"
+    },
+    {
+        "question": "Assume you have a relative-positioned div named div1, containing a static-positioned div named div2, which itself contains an absolute-positioned button. Which element will the button use as the basis for its position on the page?",
+        "answers": [
+            "div2",
+            "div1",
+            "body",
+            "root"
+        ],
+        "correct": "div1"
+    },
+    {
+        "question": "Out of the following selectors, which has the highest precedence?",
+        "answers": [
+            "div.class::before",
+            "div > p.class1.class2",
+            "div p.class",
+            "a[target=\"_blank\"]:hover"
+        ],
+        "correct": "div > p.class1.class2"
+    },
+    {
+        "question": "In a for...of loop, what is provided as the iterator?",
+        "answers": [
+            "An array index",
+            "A number representing the latest iteration",
+            "The value of the latest iteration",
+            "An iterator object"
+        ],
+        "correct": "The value of the latest iteration"
+    },
+    {
+        "question": "You load a page and find it isn't rendering as you'd expect. Where is the first place you check for issues?",
+        "answers": [
+            "The source code for the affected page",
+            "Log files from the hosting server",
+            "Forum posts/articles referencing the same issue",
+            "The DevTools Console"
+        ],
+        "correct": "The DevTools Console"
+    },
+    {
+        "question": "What HTTP status code is returned when someone accesses a resource they don't have permissions for?",
+        "answers": [
+            "503",
+            "403",
+            "400",
+            "500"
+        ],
+        "correct": "403"
+    },
+    {
+        "question": "What do you call the technique of adding dynamic values to strings without concatenation?",
+        "answers": [
+            "String Literals",
+            "String Dynamics",
+            "String Interpolation",
+            "String Templating"
+        ],
+        "correct": "String Interpolation"
+    },
+    {
+        "question": "If you run console.log(1 + \"1\"), you get '11'. But, if you run console.log(1 - \"1\") you get '0'. What is this phenomenon called?",
+        "answers": [
+            "Type Checking",
+            "Type Coersion",
+            "Type Corruption",
+            "Type Inversion"
+        ],
+        "correct": "Type Coersion"
+    },{
+        "question": "What language is responsible for defining the underlying structure of a webpage?",
+        "answers": [
+            "PHP",
+            "JS",
+            "CSS",
+            "HTML"
+        ],
+        "correct": "HTML"
+    },
+    {
+        "question": "What language is responsible for defining the visual appearance of a webpage?",
+        "answers": [
+            "PHP",
+            "JS",
+            "CSS",
+            "HTML"
+        ],
+        "correct": "CSS"
+    },
+    {
+        "question": "What language is responsible for making a webpage interactive?",
+        "answers": [
+            "PHP",
+            "JS",
+            "CSS",
+            "HTML"
+        ],
+        "correct": "JS"
+    },
+    {
+        "question": "You need to make a link to an external site open in a new tab. Which of the following should be used?",
+        "answers": [
+            "target=\"_new\"",
+            "target=\"_external\"",
+            "target=\"_tab\"",
+            "target=\"_blank\""
+        ],
+        "correct": "target=\"_blank\""
+    },
+    {
+        "question": "What is the name of the attribute used to provide descriptions of images to those who have visual impairments?",
+        "answers": [
+            "label",
+            "title",
+            "alt",
+            "caption"
+        ],
+        "correct": "alt"
+    },
+    {
+        "question": "You have written up some styles for your webpage, and would like to preview them. When you open the page though, the styles aren't applied. There is a link tag with a src attribute to point to the file. What attributes are missing?",
+        "answers": [
+            "type, encoding",
+            "encoding, rel",
+            "type, rel",
+            "type, encoding, rel"
+        ],
+        "correct": "type, rel"
+    },
+    {
+        "question": "In HTML, what attribute can be used to directly apply a style to an element?",
+        "answers": [
+            "class",
+            "style",
+            "css",
+            "id"
+        ],
+        "correct": "style"
+    },
+    {
+        "question": "What HTML element would you use to make text bold for emphasis?",
+        "answers": [
+            "b",
+            "emphasis",
+            "strong",
+            "span"
+        ],
+        "correct": "strong"
+    },
+    {
+        "question": "What event is triggered when someone clicks on an element?",
+        "answers": [
+            "onmouseclick",
+            "onmousedown",
+            "onchange",
+            "onclick"
+        ],
+        "correct": "onclick"
+    },
+    {
+        "question": "What do you call CSS that targets the beginning or the end of an element?",
+        "answers": [
+            "meta-selectors",
+            "pseudo-selectors",
+            "quasi-selectors",
+            "edge-selectors"
+        ],
+        "correct": "pseudo-selectors"
+    },
+    {
+        "question": "Which from the following will generate a number between 1 and 10?",
+        "answers": [
+            "Math.random(1,10)",
+            "Math.floor(Math.random() * 10)",
+            "Math.random() * 10",
+            "Math.ceil(Math.random() * 10)"
+        ],
+        "correct": "Math.ceil(Math.random() * 10)"
+    },
+    {
+        "question": "Which of the following is NOT a valid colour value in CSS?",
+        "answers": [
+            "#00F",
+            "blue",
+            "rgb(0, 0, 255)",
+            "hsv(240, 100, 50)"
+        ],
+        "correct": "hsv(240, 100, 50)"
+    }
+]
