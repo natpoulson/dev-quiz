@@ -35,7 +35,7 @@
                     <p>For each question you answer correctly, you'll gain 1 point. For each answered incorrectly you'll lose 5 seconds.</p>
                     <p>The quiz will end when the timer reaches zero.</p>
                 </div>
-                <div class="start">
+                <div id="start">
                     <div class="row">
                         <div class="counter sm">
                             <figure class="info">20</figure>
@@ -104,10 +104,37 @@
         </main>
 
         <aside id="leaderboard" class="debug">
-            <div class="row">
+            <div class="row space-between">
                 <h2>Leaderboard</h2>
+                <span class="btn-close" title="Close Leaderboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </span>
             </div>
-            <div class="leaderboard-table row">
+            <div id="leaderboard-table" class="column">
+                <div id="leaderboard-header">
+                    <span class="rank">Rank</span>
+                    <span class="name">Name</span>
+                    <div class="stat-header row even-spaced">
+                        <span class="stat correct" title="Correct Answers">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </span>
+                        <span class="stat incorrect" title="Incorrect Answers">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>                          
+                        </span>
+                        <span class="stat total" title="Total Questions Asked">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                            </svg>                                                 
+                        </span>
+                    </div>
+                    <!-- SVG icons provided by https://heroicons.com, provided under MIT License -->
+                </div>
                 <div class="leaderboard-item">
                     <span class="rank start">
                         #1
@@ -115,18 +142,39 @@
                     <span class="name">
                         Test User
                     </span>
-                    <span class="scoreboard-stat end correct">
-                        20
+                    <div class="leaderboard-item-stats row even-spaced">
+                        <span class="stat correct">
+                            20
+                        </span>
+                        <span class="stat incorrect">
+                            5
+                        </span>
+                        <span class="stat total">
+                            25
+                        </span>
+                    </div>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank start">
+                        #2
                     </span>
-                    <span class="scoreboard-stat end incorrect">
-                        5
+                    <span class="name">
+                        Test User
                     </span>
-                    <span class="scoreboard-stat end total">
-                        25
-                    </span>
+                    <div class="leaderboard-item-stats row even-spaced">
+                        <span class="stat correct">
+                            20
+                        </span>
+                        <span class="stat incorrect">
+                            5
+                        </span>
+                        <span class="stat total">
+                            25
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row center">
                 <button>Reset Leaderboard</button>
             </div>
         </aside>
