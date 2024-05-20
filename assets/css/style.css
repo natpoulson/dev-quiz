@@ -8,7 +8,8 @@
 :root {
     --border: hsl(0, 0%, 25%);
     --shadow: hsla(0, 0%, 0%, 40%);
-    --background: hsl(0, 0%, 95%);
+    --background: hsl(0, 0%, 98%);
+    --neutral: hsl(0, 0%, 80%);
     --bg-correct: hsl(110, 100%, 85%);
     --fg-correct: hsl(110, 90%, 30%);
     --bg-incorrect: hsl(0, 100%, 85%);
@@ -28,6 +29,12 @@ header {
     align-self: start;
     justify-self: start;
     min-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+header h1 {
+    align-self: center;
 }
 
 main {
@@ -78,11 +85,19 @@ button {
     border: solid 2px var(--border);
     border-radius: 7px;
     width: 100%;
+    cursor: pointer;
+    background-color: var(--neutral);
+    transition: ease filter 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.1);
 }
 
 .btn-close {
     width: 2rem;
     height: 2rem;
+    cursor: pointer;
 }
 
 #instructions {
@@ -92,6 +107,11 @@ button {
 
 #instructions h2 {
     margin-bottom: 0.5rem;
+}
+
+#a1, #a2, #a3, #a4 {
+    background-color: hsl(50, 80%, 80%);
+    font-size: 0.9rem;
 }
 
 .counter {
@@ -118,6 +138,13 @@ button {
     padding-right: 5px;
 }
 
+.counter.lg > figure {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    padding-top: 0.5rem;
+}
+
 .counter.sm > figure {
     width: 2.5rem;
     height: 2.5rem;
@@ -137,7 +164,7 @@ button {
 
 .counter > figure {
     margin: 5px;
-    border: solid 3px #3C3C3C;
+    border: solid 3px var(--border);
     border-radius: 100%;
     font-weight: 600;
 }
@@ -193,34 +220,30 @@ figure.info {
 }
 
 #leaderboard {
-    position: relative;
+    position: fixed;
     min-width: 40vw;
     max-width: 90vw;
     padding: 1rem;
     border: solid 2px var(--border);
+    background-color: var(--background);
     border-bottom: none;
     border-radius: 1rem 1rem 0 0;
     box-shadow: 0.1rem 0 0.25rem var(--shadow);
-    z-index: 0;
+    bottom: -100%;
+    transition: ease-out bottom 0.75s;
 }
 
-#leaderboard::before {
-    content: "Leaderboard";
-    position: absolute;
-    top: -2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    max-width: 100%;
-    height: 1.5rem;
+#leaderboard-reveal {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
     border-radius: 20px;
     text-align: center;
-    background-color: hsl(0, 100%, 85%);
-    box-shadow: 0.1rem -0.1rem 0.2rem var(--shadow);
+    background-color: var(--bg-info);
+    box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow);
     border: solid 2px var(--border);
+    cursor: pointer;
 }
 
 #leaderboard button {
@@ -229,7 +252,8 @@ figure.info {
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 100%;
-    background-color: var(--bg-incorrect);
+    background-color: hsl(0, 75%, 45%);
+    color: hsl(0, 0%, 100%);
     font-size: 1rem;
     font-weight: bold;
 }
@@ -251,6 +275,10 @@ figure.info {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+}
+
+#leaderboard.expanded {
+    bottom: 0;
 }
 
 .leaderboard-item {
@@ -305,6 +333,11 @@ figure.info {
     min-width: 8rem;
 }
 
+.leaderboard-item-stats {
+    border: solid 1px var(--border);
+    border-radius: 1rem;
+}
+
 .stat-header > .correct {
     color: var(--fg-correct);
 }
@@ -325,24 +358,4 @@ figure.info {
 .leaderboard-item-stats .total {
     background-color: var(--bg-info);
     border-radius: 0 1rem 1rem 0;
-}
-
-body.debug {
-    background-color:hsl(240, 100%, 95%);
-}
-
-header.debug {
-    background-color: hsl(180, 100%, 95%);
-}
-
-main.debug {
-    background-color: hsl(120, 100%, 95%);
-}
-
-article.debug {
-    background-color: hsl(60, 100%, 95%);
-}
-
-aside.debug {
-    background-color: hsl(0, 100%, 95%);
 }

@@ -7,28 +7,28 @@
         <!-- Overrides -->
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
-    <body class="debug">
-        <header class="debug">
+    <body>
+        <header class="row space-between">
             <h1>DEV.quiz</h1>
-            <section id="counters" class="hidden">
-                <div id="counter-points" class="counter">
+            <section id="counters" class="row hidden">
+                <div id="counter-points" class="counter lg">
                     <figure>0</figure>
                     <figcaption>Points</figcaption>
                 </div>
-                <div id="counter-question" class="counter">
+                <div id="counter-question" class="counter lg">
                     <figure>0</figure>
                     <figcaption>Question</figcaption>
                 </div>
-                <div id="counter-timer" class="counter">
+                <div id="counter-timer" class="counter lg">
                     <figure>60</figure>
                     <figcaption>Seconds</figcaption>
                 </div>
             </section>
         </header>
         
-        <main class="debug">
+        <main>
             <!-- Starting Screen -->
-            <article class="debug row">
+            <article class="row">
                 <div id="instructions" class="column center">
                     <h2>Instructions</h2>
                     <p>When you click the START button, you'll be asked a series of questions.</p>
@@ -52,7 +52,7 @@
                 </div>
             </article>
             <!-- Quiz Screen -->
-            <article id="question" class="debug none">
+            <article id="question" class=" none">
                 <div class="column">
                     <h2 id="question-title">Question 1:</h2>
                     <p id="question-text">This is a sample question. Please choose an answer from one of the below...</p>
@@ -65,7 +65,7 @@
                 </div>
             </article>
             <!-- End Screen -->
-            <article id="end-screen" class="debug none">
+            <article id="end-screen" class=" none">
                 <div class="row center">
                     <h2>Game over!</h2>
                 </div>
@@ -81,7 +81,7 @@
                                 <input id="playerName" type="text">
                             </div>
                             <div>
-                                <button>Save</button>
+                                <button id="save-score">Save</button>
                             </div>
                         </form>
                     </div>
@@ -103,7 +103,10 @@
             </article>
         </main>
 
-        <aside id="leaderboard" class="debug">
+        <footer>
+            <button id="leaderboard-reveal">Leaderboard</button>
+        </footer>
+        <aside id="leaderboard" class="">
             <div class="row space-between">
                 <h2>Leaderboard</h2>
                 <span class="btn-close" title="Close Leaderboard">
