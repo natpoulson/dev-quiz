@@ -28,7 +28,7 @@
         
         <main>
             <!-- Starting Screen -->
-            <article class="row">
+            <article id="card-start" class="row">
                 <div id="instructions" class="column center">
                     <h2>Instructions</h2>
                     <p>When you click the START button, you'll be asked a series of questions.</p>
@@ -52,7 +52,7 @@
                 </div>
             </article>
             <!-- Quiz Screen -->
-            <article id="question" class=" none">
+            <article id="card-question" class="none">
                 <div class="column">
                     <h2 id="question-title">Question 1:</h2>
                     <p id="question-text">This is a sample question. Please choose an answer from one of the below...</p>
@@ -65,7 +65,7 @@
                 </div>
             </article>
             <!-- End Screen -->
-            <article id="end-screen" class=" none">
+            <article id="card-end" class=" none">
                 <div class="row center">
                     <h2>Game over!</h2>
                 </div>
@@ -178,7 +178,7 @@
                 </div>
             </div>
             <div class="row center">
-                <button>Reset Leaderboard</button>
+                <button id="leaderboard-reset">Reset Leaderboard</button>
             </div>
         </aside>
         <!-- Script declarations -->
